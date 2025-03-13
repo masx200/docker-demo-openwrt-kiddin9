@@ -56,10 +56,23 @@ networks:
 ```yml
 ipam:
   config:
-    
     - subnet: 172.20.254.0/24
-    
+
     - subnet: fc00:1111:1111:1111::/64
+```
+
+修改配置文件`/etc/config/dhcp` 中的网络地址
+
+```text
+config domain '_sc_pw'
+	option name 'pw'
+	option ip '172.20.254.2'
+	option comments 'PassWall'
+
+config domain 'default_server'
+	option name 'kwrt'
+	option ip '172.20.254.2'
+	option comments '后台地址'
 ```
 
 ### 修改默认用户的密码

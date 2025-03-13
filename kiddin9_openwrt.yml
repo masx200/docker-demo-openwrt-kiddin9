@@ -28,11 +28,10 @@ services:
 networks:
   app_net:
     driver: bridge
-    # 启用IPv6支持 [[3]][[6]]
+
     enable_ipv6: true
     ipam:
       config:
-        # IPv4子网配置（可自定义）
         - subnet: 172.20.254.0/24
-        # IPv6子网配置（使用私有地址段）[[6]]
+
         - subnet: fc00:1111:1111:1111::/64
