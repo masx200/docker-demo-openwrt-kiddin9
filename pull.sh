@@ -1,0 +1,1 @@
+docker pull masx200/kiddin9_openwrt:latest
