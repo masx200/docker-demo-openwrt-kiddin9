@@ -47,11 +47,11 @@ config odhcpd 'odhcpd'
 
 config domain '_sc_pw'
 	option name 'pw'
-	option ip '10.0.0.1'
+	option ip '172.20.254.2'
 	option comments 'PassWall'
 
 config domain 'default_server'
 	option name 'kwrt'
-	option ip '10.0.0.1'
+	option ip '172.20.254.2'
 	option comments '后台地址'
 
