@@ -4,6 +4,7 @@ services:
     volumes:
       - "/:/mnt/host"
       - "./root/etc/config/dhcp:/etc/config/dhcp"
+      - "./root/etc/config/shadow:/etc/config/shadow"
       - "./root/etc/config/firewall:/etc/config/firewall"
       - "./root/etc/config/network:/etc/config/network"
     restart: always
