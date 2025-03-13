@@ -20,7 +20,7 @@ services:
     image: kiddin9_openwrt
     command: /sbin/init
     ports:
-      - "80:80"
+      - "58000:80"
 networks:
   app_net:
     driver: bridge
