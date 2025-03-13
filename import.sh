@@ -1,0 +1,1 @@
+docker import https://dl.openwrt.ai/releases/24.10/targets/x86/64/kwrt-03.08.2025-x86-64-generic-rootfs.tar.gz kiddin9_openwrt

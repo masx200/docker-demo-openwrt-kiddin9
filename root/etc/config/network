@@ -1,0 +1,25 @@
+config interface 'loopback'
+	option device 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option ula_prefix 'fd05:3ae0:1049::/48'
+	option packet_steering '1'
+
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	list ports 'eth0'
+	list ports 'dheth0'
+	option promisc '1'
+
+config interface 'lan'
+	option device 'br-lan'
+	option proto 'static'
+	list ipaddr '172.20.254.2/24'
+	option gateway '172.20.254.1'
+	list ip6addr 'fc00:1111:1111:1111::2/64'
+	option ip6gw 'fc00:1111:1111:1111::1'
+

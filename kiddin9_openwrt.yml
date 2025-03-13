@@ -1,0 +1,34 @@
+name: kiddin9_openwrt
+services:
+  kiddin9_openwrt:
+    volumes:
+      - "/:/mnt/host"
+      - "./root/etc/config/dhcp:/etc/config/dhcp"
+      - "./root/etc/config/firewall:/etc/config/firewall"
+      - "./root/etc/config/network:/etc/config/network"
+    restart: always
+    container_name: kiddin9_openwrt
+
+    stdin_open: true
+
+    tty: true
+    privileged: true
+    networks:
+      app_net:
+        ipv6_address: fc00:1111:1111:1111::2
+        ipv4_address: 172.20.254.2
+    image: kiddin9_openwrt
+    command: /sbin/init
+    ports:
+      - "80:80"
+networks:
+  app_net:
+    driver: bridge
+    # 启用IPv6支持 [[3]][[6]]
+    enable_ipv6: true
+    ipam:
+      config:
+        # IPv4子网配置（可自定义）
+        - subnet: 172.20.254.0/24
+        # IPv6子网配置（使用私有地址段）[[6]]
+        - subnet: fc00:1111:1111:1111::/64
