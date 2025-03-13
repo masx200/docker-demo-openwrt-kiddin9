@@ -5,11 +5,14 @@ services:
       - "/:/mnt/host"
       - "./root/etc/config/dhcp:/etc/config/dhcp"
       - "./root/etc/shadow:/etc/shadow"
+      - "./root/etc/shadow-:/etc/shadow-"
       - "./root/etc/config/firewall:/etc/config/firewall"
       - "./root/etc/config/network:/etc/config/network"
     restart: always
     container_name: kiddin9_openwrt
 
+    environment:
+      - "TZ=Asia/Shanghai"
     stdin_open: true
 
     tty: true
