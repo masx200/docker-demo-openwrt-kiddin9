@@ -36,12 +36,12 @@ sh stop.sh
 
 ```text
 config interface 'lan'
-	option device 'br-lan'
-	option proto 'static'
+    option device 'br-lan'
+    option proto 'static'
     list ipaddr '172.20.254.2/24'
     option gateway '172.20.254.1'
-	list ip6addr 'fc00:1111:1111:1111::2/64'
-	option ip6gw 'fc00:1111:1111:1111::1'
+    list ip6addr 'fc00:1111:1111:1111::2/64'
+    option ip6gw 'fc00:1111:1111:1111::1'
 ```
 
 修改配置文件`kiddin9_openwrt.yml` 中的网络范围和网络地址
@@ -65,14 +65,14 @@ ipam:
 
 ```text
 config domain '_sc_pw'
-	option name 'pw'
-	option ip '172.20.254.2'
-	option comments 'PassWall'
+    option name 'pw'
+    option ip '172.20.254.2'
+    option comments 'PassWall'
 
 config domain 'default_server'
-	option name 'kwrt'
-	option ip '172.20.254.2'
-	option comments '后台地址'
+    option name 'kwrt'
+    option ip '172.20.254.2'
+    option comments '后台地址'
 ```
 
 ### 修改默认用户的密码
